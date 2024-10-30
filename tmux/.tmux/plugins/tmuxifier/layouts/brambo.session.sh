@@ -5,7 +5,7 @@ session_root ~
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "default"; then
+if initialize_session "brambo"; then
   window_root "~"
   new_window "local"
   
@@ -20,6 +20,13 @@ if initialize_session "default"; then
   run_cmd "nvim"
   split_v 20
   select_pane 0
+
+  window_root "~/repos/bullsi"
+  new_window "Bullsi"
+  run_cmd "nvim"
+  split_v 20
+  select_pane 0
+
 
 
   # Create a new window inline within session layout definition.
