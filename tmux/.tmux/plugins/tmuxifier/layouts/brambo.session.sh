@@ -13,19 +13,19 @@ if initialize_session "brambo"; then
   new_window "VO"
   run_cmd "nvim"
   split_v 20
-  select_pane 0
+  select_pane 1
 
   window_root "~/repos/athumi"
   new_window "ATHUMI"
   run_cmd "nvim"
   split_v 20
-  select_pane 0
+  select_pane 1
 
   window_root "~/repos/bullsi"
   new_window "Bullsi"
   run_cmd "nvim"
   split_v 20
-  select_pane 0
+  select_pane 1
 
 
 
