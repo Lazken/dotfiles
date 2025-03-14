@@ -11,8 +11,8 @@ return {
     config = function()
       require("codecompanion").setup({
         adapters = {
-             openai = function()
-              return require("codecompanion.adapters").extend("openai", {
+               openai = function()
+                return require("codecompanion.adapters").extend("openai", {
                 env = {
                   api_key = "cmd: cat ~/openaikey",
                 },
@@ -21,13 +21,13 @@ return {
         },
         strategies = {
           chat = {
-            adapter = "openai",
+              adapter = "openai",
           },
           inline = {
-            adapter = "openai",
+              adapter = "openai",
           },
           agent = {
-            adapter = "openai",
+              adapter = "openai",
           },
         },
         display = {
