@@ -11,32 +11,23 @@ return {
     config = function()
       require("codecompanion").setup({
         adapters = {
-          deepseek = function()
-            return require("codecompanion.adapters").extend("ollama", {
-              name = "deepseek", -- Give this adapter a different name to differentiate it from the default ollama adapter
-              schema = {
-                model = {
-                  default = "deepseek-r1",
+             openai = function()
+              return require("codecompanion.adapters").extend("openai", {
+                env = {
+                  api_key = "cmd: cat ~/openaikey",
                 },
-                num_ctx = {
-                  default = 4096,
-                },
-                num_predict = {
-                  default = -1,
-                },
-              },
-            })
-          end,
+              })
+            end,
         },
         strategies = {
           chat = {
-            adapter = "deepseek",
+            adapter = "openai",
           },
           inline = {
-            adapter = "deepseek",
+            adapter = "openai",
           },
           agent = {
-            adapter = "deepseek",
+            adapter = "openai",
           },
         },
         display = {
