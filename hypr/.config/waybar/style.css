@@ -75,6 +75,10 @@ button:hover {
   padding-right: 4px;
 }
 
+#temperature.critical {
+  background-color: red;
+}
+
 #clock {
     color: @maroon;
     border-bottom: 2px solid @maroon;

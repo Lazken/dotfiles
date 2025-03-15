@@ -14,6 +14,18 @@ stow
 k9s
 kitty
 starship
+hyprpaper
+hyprlock
+swaync
+hypershot
+
 
 All themed with catppuccin mocha.
+
+
+tmux:
+get tmux-tpm from github, use clone command
+lead - I in tmux session to let tpm install the other stuff
+
+
 
