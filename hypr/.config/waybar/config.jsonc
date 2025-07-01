@@ -4,7 +4,7 @@
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-right": ["tray", "network", "pulseaudio", "battery", "cpu", "temperature", "custom/power"],
   "clock": {
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "format": "{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "battery": {

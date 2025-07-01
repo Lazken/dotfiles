@@ -11,3 +11,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
