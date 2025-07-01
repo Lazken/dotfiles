@@ -14,3 +14,7 @@ awp () {
   echo "AWS profile is now '$1'"
   aws sts get-caller-identity
 }
+
+awl () {
+  aws configure list-profiles
+}
