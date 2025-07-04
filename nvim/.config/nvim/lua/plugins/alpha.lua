@@ -64,7 +64,7 @@ return {
 
     local todisplayart = {
     }
-    Addart(todisplayart, cloudsisters)
+    Addart(todisplayart, neovimart )
    -- Addart(todisplayart, neovimart)
     dashboard.section.header.val = todisplayart
     alpha.setup(dashboard.opts)
