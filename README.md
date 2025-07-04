@@ -14,6 +14,7 @@ stow
 k9s
 kitty
 starship
+yazi
 
 All themed with catppuccin mocha.
 
