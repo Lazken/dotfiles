@@ -10,6 +10,16 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
+      ensure_installed = {
+        "terraform-ls",
+        "helm-ls",
+        "bash-language-server",
+        "json-lsp",
+        "lua-language-server",
+        "pyright",
+        "python-lsp-server",
+        "yaml-language-server"
+      },
       auto_install = true,
     },
   },
