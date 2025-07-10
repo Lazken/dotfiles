@@ -19,6 +19,7 @@ hyprlock
 swaync
 hypershot
 yazi
+npm
 
 All themed with catppuccin mocha.
 
