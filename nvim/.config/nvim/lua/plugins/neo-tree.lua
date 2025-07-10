@@ -25,6 +25,11 @@ return {
       },
       filesystem = {
         hijack_netrw_behavior = "disabled",
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+        },
         components = {
           harpoon_index = function(config, node, _)
             local harpoon_list = require("harpoon"):list()
