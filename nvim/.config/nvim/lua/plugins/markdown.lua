@@ -6,6 +6,7 @@ return {
     lazy = false,
     opts = {},
     keys = {
-      { "<leader>m", function() require("render-markdown").toggle() end, desc = "Render Markdown Toggle", },
+      { "<leader>mr", function() require("render-markdown").toggle() end, desc = "Render Markdown Toggle", },
+      { "<leader>tt","0i- [ ] <esc>j", desc = "make line todo list", },
     },
 }

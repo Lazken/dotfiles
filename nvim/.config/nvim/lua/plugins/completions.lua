@@ -11,6 +11,7 @@ return {
       "rafamadriz/friendly-snippets",
       config = function()
         require("luasnip").filetype_extend("terraform", { "terraform" })
+        require("luasnip").filetype_extend("markdown", { "markdown" })
         require("luasnip.loaders.from_vscode").lazy_load()
         require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./lua/plugins/extras/luasnip" } })
       end,
