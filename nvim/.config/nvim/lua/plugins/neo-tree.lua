@@ -9,8 +9,7 @@ return {
     "ThePrimeagen/harpoon",
 	},
 	config = function (_, opts)
-	  vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
-	  vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+	  vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal float<CR>", {})
     require("neo-tree").setup({
       event_handlers = {
         {
