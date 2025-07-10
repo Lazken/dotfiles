@@ -7,19 +7,31 @@ return {
     end,
   },
   {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          "prettier",
+          "bash-language-server",
+          "helm-ls",
+          "json-lsp",
+          "lua-language-server",
+          "pyright",
+          "python-lsp-server",
+          "terraform-ls",
+          "terraform",
+          "yamllint",
+          "yaml-language-server",
+          "beautysh",
+        }
+      })
+    end,
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-      ensure_installed = {
-        "terraform-ls",
-        "helm-ls",
-        "bash-language-server",
-        "json-lsp",
-        "lua-language-server",
-        "pyright",
-        "python-lsp-server",
-        "yaml-language-server"
-      },
       auto_install = true,
     },
   },
