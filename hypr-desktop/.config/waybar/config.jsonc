@@ -1,0 +1,62 @@
+{
+  "position": "top",
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["hyprland/workspaces" ],
+  "modules-right": ["tray", "clock", "pulseaudio", "network", "temperature", "cpu", "memory"],
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "custom/pipewire": {
+    "format": "{icon}",
+    "return-type": "json",
+    "signal": 8,
+    "interval": "once",
+    "format-icons": {
+        "mute": "",
+        "default": ["", "", "", ""],
+    },
+    "exec": "pw-volume status"
+  },
+  "network": {
+	  "interface": "eno1",
+	  "format": "{ifname}",
+	  "format-wifi": "{essid} ({signalStrength}%) ",
+	  "format-ethernet": "{ifname} ",
+	  "format-disconnected": "", //An empty format will hide the module.
+	  "format-disconnected": "",
+	  "tooltip-format": "{ifname}",
+	  "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	  "tooltip-format-ethernet": "{ifname} ",
+	  "tooltip-format-disconnected": "Disconnected",
+	  "max-length": 50
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "critical-treshold": 70,
+    "format": "{temperatureC}°C",
+    "interval": 1,
+  },
+  "cpu": {
+	  "interval": 10,
+	  "format": "{}% ",
+	  "max-length": 10
+  },
+  "memory": {
+	  "interval": 30,
+	  "format": "{}% ",
+	  "max-length": 10
+  },
+}
