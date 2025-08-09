@@ -19,7 +19,8 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-# font-family = Iosevka
+font-family = "Caskaydia Cove Nerd Font"
+font-size = 10
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
@@ -42,3 +43,4 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 custom-shader = shaders/cursor_smear.glsl
+theme = catppuccin-macchiato.conf
