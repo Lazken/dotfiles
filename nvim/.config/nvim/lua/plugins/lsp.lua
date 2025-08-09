@@ -127,7 +127,6 @@ return {
       lspconfig.terraformls.setup({
         capabilities = capabilities
       })
-      lspconfig.gdscript.setup({})
 
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
