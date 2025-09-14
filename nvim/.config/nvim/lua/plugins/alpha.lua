@@ -9,6 +9,8 @@ return {
   "goolord/alpha-nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
+    "nvim-lua/plenary.nvim",
+    "echasnovski/mini.icons",
   },
 
     config = function()
@@ -64,9 +66,10 @@ return {
 
     local todisplayart = {
     }
-    Addart(todisplayart, neovimart )
+    Addart(todisplayart, cloudsisters )
    -- Addart(todisplayart, neovimart)
     dashboard.section.header.val = todisplayart
+    dashboard.opts.position = "center"
     alpha.setup(dashboard.opts)
   end
 }
