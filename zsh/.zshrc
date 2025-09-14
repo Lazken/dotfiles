@@ -17,7 +17,4 @@ alias inv='nvim $(fzf -m --preview="batcat --color=always {}")'
 alias vial='sudo Vial-v0.7.1-x86_64.AppImage'
 alias ls='ls -lrt'
 #Open tmux default session
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
-
+alias letsgo='tmux attach-session -t default || tmux new-session -s default'
