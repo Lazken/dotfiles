@@ -13,8 +13,20 @@ export K9S_EDITOR=nvim
 alias nv='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias inv='nvim $(fzf -m --preview="batcat --color=always {}")'
+alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
 alias vial='sudo Vial-v0.7.1-x86_64.AppImage'
 alias ls='ls -lrt'
 #Open tmux default session
 alias letsgo='tmux attach-session -t default || tmux new-session -s default'
+
+#functions
+awp () {
+  export AWS_PROFILE=$1
+  export AWS_DEFAULT_PROFILE=$1
+  echo "AWS profile is now '$1'"
+  aws sts get-caller-identity
+}
+
+awl () {
+  aws configure list-profiles
+}
