@@ -17,7 +17,7 @@ alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
 alias vial='sudo Vial-v0.7.1-x86_64.AppImage'
 alias ls='ls -lrt'
 #Open tmux default session
-alias letsgo='tmux attach-session -t default || tmux new-session -s default'
+alias letsgo='tmuxifier load-session cloudsisters'
 
 #functions
 awp () {
