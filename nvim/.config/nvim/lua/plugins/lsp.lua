@@ -24,6 +24,7 @@ return {
           "yamllint",
           "yaml-language-server",
           "beautysh",
+          "black",
         }
       })
     end,
@@ -63,7 +64,7 @@ return {
               },
               hint = {
                 enable = true,
-                setType = false,
+                setType = true,
                 paramType = true,
                 paramName = "Disable",
                 semicolon = "Disable",
@@ -133,6 +134,15 @@ return {
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      local diagnostics_active = true
+      vim.keymap.set('n', '<leader>ge', function()
+        diagnostics_active = not diagnostics_active
+        if diagnostics_active then
+          vim.diagnostic.show()
+        else
+          vim.diagnostic.hide()
+        end
+      end)
     end,
   },
 }

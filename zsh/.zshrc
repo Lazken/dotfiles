@@ -9,6 +9,7 @@ source <(fzf --zsh)
 
 export EDITOR=nvim
 export K9S_EDITOR=nvim
+. ~/.zsh_openai_api
 
 alias nv='nvim'
 alias vi='nvim'

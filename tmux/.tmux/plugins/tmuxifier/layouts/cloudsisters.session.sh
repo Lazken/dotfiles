@@ -10,23 +10,42 @@ if initialize_session "cloudsisters"; then
   window_root "~"
   new_window "local"
 
+  window_root "~/repos/cloudsisters/applications/intelligent-platform/cs-backend-tf"
+  new_window "cs-backend-tf"
+  run_cmd "nvim"
+  split_h 20
+  select_pane 1
+
+  window_root "~/repos/cloudsisters/applications/intelligent-platform/cs-usermanagement-api"
+  new_window "cs-usermanagement-api"
+  run_cmd "nvim"
+  split_h 20
+  select_pane 1
+
+  window_root "~/repos/cloudsisters/applications/intelligent-platform/cs-backend-api"
+  new_window "cs-backend-api"
+  run_cmd "nvim"
+  split_h 20
+  select_pane 1
+
+  window_root "~/repos/cloudsisters/applications/intelligent-platform/tfengine-api"
+  new_window "tfengine-api"
+  run_cmd "nvim"
+  split_h 20
+  select_pane 1
+
   window_root "~/dotfiles"
   new_window "dotfiles"
   run_cmd "nvim"
-  split_v 20
+  split_h 20
   select_pane 1
 
   window_root "~/repos/lily58"
   new_window "ZMK"
   run_cmd "nvim"
-  split_v 20
+  split_h 20
   select_pane 1
 
-  window_root "~/repos/cloudsisters"
-  new_window "CloudSisters"
-  run_cmd "nvim"
-  split_v 20
-  select_pane 1
 
   # Create a new window inline within session layout definition.
   #new_window "misc"

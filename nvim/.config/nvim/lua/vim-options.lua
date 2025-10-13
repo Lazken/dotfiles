@@ -21,3 +21,7 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.statusline = "%f"
+vim.diagnostic.enable = false
+vim.diagnostic.config({
+  virtual_lines = true,
+})
