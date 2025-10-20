@@ -15,8 +15,8 @@ return {
         },
         pickers = {
           find_files = {
-            file_ignore_patterns = { 'node_modules', '.git', '.venv' },
-            hidden = true
+            file_ignore_patterns = { 'node_modules', '.venv', '.git/', '__pycache__' },
+            hidden = true,
           },
           live_grep = {
             file_ignore_patterns = { 'node_modules', '.git', '.venv' },
