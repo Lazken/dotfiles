@@ -29,9 +29,3 @@ vim.cmd [[
   highlight Normal ctermbg=none
   highlight NonText ctermbg=none
 ]]
-
--- diagnostics
-vim.diagnostic.enable = false
-vim.diagnostic.config({
-  virtual_lines = true,
-})
