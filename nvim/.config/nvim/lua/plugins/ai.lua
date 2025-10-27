@@ -21,3 +21,4 @@ return {
       "folke/trouble.nvim", -- optional
     }
 }
+
