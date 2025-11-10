@@ -1,11 +1,9 @@
+[push]
+        autoSetupRemote = true
 [user]
 	email = bramborremans@gmail.com
 	name = Lazken
 [core]
 	editor = nvim
-[url "git@github.com:bullsi"]
-	insteadOf = https://github.com/bullsi
-[url "git@github.com:norosurv"]
-	insteadOf = https://github.com/norosurv
 [url "git@github.com:Lazken"]
 	insteadOf = https://github.com/Lazken

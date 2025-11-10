@@ -83,6 +83,20 @@ return {
     })
 
     -- Configure and enable LSP servers
+    -- helm_ls
+    vim.lsp.config("helm_ls", {
+      settings = {
+        ["helm-ls"] = {
+          yamlls = {
+            path = "yaml-language-server",
+          }
+        }
+      },
+    })
+    vim.lsp.enable("helm_ls")
+    vim.lsp.enable("yamlls")
+
+    -- Configure and enable LSP servers
     -- lua_ls
     vim.lsp.config("lua_ls", {
       settings = {
