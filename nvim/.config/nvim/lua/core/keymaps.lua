@@ -12,3 +12,6 @@ vim.keymap.set('n', '<leader>wq', ':wq<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
+vim.keymap.set('v', '<leader>y', '"*y')
+vim.keymap.set('n', '<leader>y', '"*yy')
+vim.keymap.set('n', '<leader>p', '"*p')
