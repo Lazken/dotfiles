@@ -16,7 +16,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = ['sketchybar --reload']
+#after-login-command = ['sketchybar --reload']
 
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
@@ -55,7 +55,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
-# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
@@ -65,11 +65,6 @@ inner.vertical =   5
 outer.left =       5
 outer.bottom =     5
 outer.right =      5
-outer.top = [
-  { monitor."built-in" = 10 },
-  { monitor."main" = 50 },
-  50
-]
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented

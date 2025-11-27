@@ -11,6 +11,7 @@ return {
       })
       vim.keymap.set("n", "<leader>aa", vim.cmd.ChatGPT, {})
       vim.keymap.set("n", "<leader>ae", vim.cmd.ChatGPTEditWithInstructions, {})
+      vim.keymap.set("v", "<leader>ae", vim.cmd.ChatGPTEditWithInstructions, {})
       vim.keymap.set("n", "<leader>ag", vim.cmd.ChatGPTCompleteCode, {})
       require("chatgpt.config").options.openai_params.max_tokens = nil
       require("chatgpt.config").options.openai_params.temperature = nil

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export CONFIG_DIR="/Users/brambo/.config/sketchybar"
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
 # This is a demo config to showcase some of the most important commands.
