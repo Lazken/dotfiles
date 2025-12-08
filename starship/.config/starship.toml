@@ -174,7 +174,7 @@ format = '[[ $symbol( $profile) ](fg:base bg:blue)]($style)'
 [kubernetes]
 symbol = "⎈ "
 style = "fg:base bg:lavender"
-format = "[$symbol$context( \\($cluster\\))]($style)"
+format = "[$symbol$context]($style)"
 disabled = false
 
 [time]
