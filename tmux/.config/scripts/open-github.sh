@@ -8,4 +8,4 @@ if [[ $url == git@* ]]; then
     url="${url/:/\/}" 
     url="https://$url"
 fi
-open "$url"
+xdg-open "$url" > /dev/null
