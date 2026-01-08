@@ -18,3 +18,28 @@ awp () {
 awl () {
   aws configure list-profiles
 }
+#
+# Yazi exit to selected directory, q to quit into chosen dir, Q to quit without changing dir
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+function cdnvim() {
+  local selected_dir
+  selected_dir=$(fd -t d . ~/ | fzf +m --height 50% --preview 'tree -C {}')
+  if [[ -n "$selected_dir" ]]; then
+    cd "$selected_dir" && nvim || return 1
+  fi
+}
+
+function fdf() {
+  local selected_dir
+  selected_dir=$(fd -t d . ~/ | fzf +m --height 50% --preview 'tree -C {}')
+  if [[ -n "$selected_dir" ]]; then
+    cd "$selected_dir" || return 1
+  fi
+}

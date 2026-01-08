@@ -49,17 +49,19 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Fuzzyfind directory and open nvim in this directory
 function cdnvim() {
   local selected_dir
-  selected_dir=$(fd -t d . ~/repos/ | fzf +m --height 50% --preview 'tree -C {}')
+  selected_dir=$(fd -t d . | fzf +m --height 50% --preview 'tree -C {}')
   if [[ -n "$selected_dir" ]]; then
     cd "$selected_dir" && nvim || return 1
   fi
 }
 
+#Fuzzyfind directory and cd to this directory
 function fdf() {
   local selected_dir
-  selected_dir=$(fd -t d . ~/repos/ | fzf +m --height 50% --preview 'tree -C {}')
+  selected_dir=$(fd -t d . | fzf +m --height 50% --preview 'tree -C {}')
   if [[ -n "$selected_dir" ]]; then
     cd "$selected_dir" || return 1
   fi
