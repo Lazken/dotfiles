@@ -1,8 +1,8 @@
 {
   "position": "top",
-  "modules-center": ["clock"],
-  "modules-left": ["temperature", "cpu", "memory", "hyprland/workspaces", "hyprland/window"],
-  "modules-right": ["tray", "network", "pulseaudio", "battery", "cpu", "temperature", "custom/power"],
+  "modules-center": ["hyprland/window"],
+  "modules-left": ["clock", "hyprland/workspaces"],
+  "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery", "cpu", "memory", "temperature", "custom/power"],
   "clock": {
     "format": "{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
@@ -57,6 +57,11 @@
     "icon-size": 21,
     "spacing": 10
   },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+  }, 
   "custom/power": {
     "format" : "⏻ ",
       "tooltip": false,
