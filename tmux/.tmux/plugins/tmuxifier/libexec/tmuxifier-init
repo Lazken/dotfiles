@@ -14,25 +14,25 @@ if [ -z "$shell" ]; then
 fi
 
 case "$shell" in
-  bash )
+  bash)
     profile='~/.bash_profile'
     ;;
-  zsh )
+  zsh)
     profile='~/.zshrc'
     ;;
-  ksh )
+  ksh)
     profile='~/.profile'
     ;;
-  csh )
+  csh)
     profile='~/.cshrc'
     ;;
-  tcsh )
+  tcsh)
     profile='~/.tcshrc'
     ;;
-  fish )
+  fish)
     profile='~/.config/fish/config.fish'
     ;;
-  * )
+  *)
     profile='shell init file'
     ;;
 esac
@@ -45,15 +45,15 @@ Load Tmuxifier by adding the following to your ${profile}:
 "
 
   case "$shell" in
-    csh | tcsh )
+    csh | tcsh)
       echo "    eval \`tmuxifier init -\`
 "
       ;;
-    fish )
+    fish)
       echo "    eval (tmuxifier init -)
 "
       ;;
-    * )
+    *)
       echo "    eval \"\$(tmuxifier init -)\"
 "
       ;;
@@ -64,26 +64,26 @@ Load Tmuxifier by adding the following to your ${profile}:
 fi
 
 # Print help if "-" argument is not given
-if [[ " $@ " != *" - "* ]]; then
-  echo "$(tmuxifier-help init $@)" >&2
+if [[ " $* " != *" - "* ]]; then
+  tmuxifier-help init "$@" >&2
   exit 1
 fi
 
 case "$shell" in
-  csh | tcsh )
+  csh | tcsh)
     echo "setenv TMUXIFIER \"$TMUXIFIER\";"
     echo "source \"\$TMUXIFIER/init.tcsh\";"
     ;;
-  fish )
+  fish)
     echo "set -gx TMUXIFIER \"$TMUXIFIER\";"
     # fish shell 2.0.0 does not have the source alias
     if [[ $(fish --version 2>&1 | awk -F'version ' '{print $2}') = '2.0.0' ]]; then
       echo ". \"\$TMUXIFIER/init.fish\";"
     else
       echo "source \"\$TMUXIFIER/init.fish\";"
-    fi  
+    fi
     ;;
-  * )
+  *)
     echo "export TMUXIFIER=\"$TMUXIFIER\";"
     echo "source \"\$TMUXIFIER/init.sh\";"
     ;;

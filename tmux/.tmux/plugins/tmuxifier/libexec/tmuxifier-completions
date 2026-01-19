@@ -20,11 +20,11 @@ if calling-complete "$@"; then
 fi
 
 has-completions() {
-  grep -i "^# Provide tmuxifier completions" "$1" >/dev/null
+  grep -i "^# Provide tmuxifier completions" "$1" > /dev/null
 }
 
 if [ -z "$1" ]; then
-  echo "$(tmuxifier-help completions $@)" >&2
+  tmuxifier-help completions "$@" >&2
   exit 1
 fi
 

@@ -140,7 +140,7 @@ balance_windows_horizontal() {
 #
 synchronize_on() {
   tmuxifier-tmux set-window-option -t "$session:${1:-$window}" \
-                 synchronize-panes on
+    synchronize-panes on
 }
 
 # Turn off synchronize-panes in a window.
@@ -150,7 +150,7 @@ synchronize_on() {
 #
 synchronize_off() {
   tmuxifier-tmux set-window-option -t "$session:${1:-$window}" \
-                 synchronize-panes off
+    synchronize-panes off
 }
 
 # Send/paste keys to the currently active pane/window.
@@ -214,8 +214,8 @@ load_window() {
     if [ $# -gt 1 ]; then
       window="$2"
     else
-      window="${1/%.window.sh}"
-      window="${window/%.sh}"
+      window="${1/%.window.sh/}"
+      window="${window/%.sh/}"
     fi
     source "$file"
     window=
@@ -258,8 +258,8 @@ load_session() {
   if [ $# -gt 1 ]; then
     session="$2"
   else
-    session="${1/%.session.sh}"
-    session="${session/%.sh}"
+    session="${1/%.session.sh/}"
+    session="${session/%.sh/}"
   fi
 
   set_default_path=true
@@ -308,7 +308,7 @@ initialize_session() {
 
       $set_default_path && tmuxifier-tmux \
         set-option -t "$session:" \
-        default-path "$session_root" 1>/dev/null
+        default-path "$session_root" 1> /dev/null
     fi
 
   # Tmux 1.9 and later.
@@ -344,12 +344,11 @@ initialize_session() {
 # created, but already existed, then we'll need to specifically switch to it.
 #
 finalize_and_go_to_session() {
-  ! tmuxifier-tmux kill-window -t "$session:999" 2>/dev/null
+  ! tmuxifier-tmux kill-window -t "$session:999" 2> /dev/null
   if [[ "$(tmuxifier-current-session)" != "$session" ]]; then
     __go_to_session
   fi
 }
-
 
 #
 # Internal functions
@@ -368,7 +367,7 @@ __expand_path() {
 
 __get_first_window_index() {
   local index=$(tmuxifier-tmux list-windows -t "$session:" \
-    -F "#{window_index}" 2>/dev/null)
+    -F "#{window_index}" 2> /dev/null)
 
   if [ -n "$index" ]; then
     echo "$index" | head -1
@@ -379,10 +378,10 @@ __get_first_window_index() {
 
 __get_current_window_index() {
   local lookup=$(tmuxifier-tmux list-windows -t "$session:" \
-    -F "#{window_active}:#{window_index}" 2>/dev/null | grep "^1:")
+    -F "#{window_active}:#{window_index}" 2> /dev/null | grep "^1:")
 
   if [ -n "$lookup" ]; then
-    echo "${lookup/1:}"
+    echo "${lookup/1:/}"
   fi
 }
 

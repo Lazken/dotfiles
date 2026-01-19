@@ -38,22 +38,22 @@ export PATH="$TMUXIFIER/libexec:$PATH"
 export TMUXIFIER_MIN_TMUX_VERSION="1.6"
 if [ "$(tmuxifier-tmux-version "$TMUXIFIER_MIN_TMUX_VERSION")" == "<" ]; then
   echo -e "ERROR: Tmuxifier requires Tmux v${TMUXIFIER_MIN_TMUX_VERSION}" \
-       "or newer. You have v$(tmuxifier-tmux-version)." >&2
+    "or newer. You have v$(tmuxifier-tmux-version)." >&2
   exit 1
 fi
 
 # Parse given command
 command="$1"
 case "$command" in
-  "" | "-h" | "--help" )
+  "" | "-h" | "--help")
     echo -e "tmuxifier $(tmuxifier-version)\n$(tmuxifier-help)" >&2
     ;;
 
-  "-v" | "--version" )
+  "-v" | "--version")
     tmuxifier-version
     ;;
 
-  * )
+  *)
     ! command_path="$(tmuxifier-resolve-command-path "$command")"
 
     if [ -z "$command_path" ]; then
