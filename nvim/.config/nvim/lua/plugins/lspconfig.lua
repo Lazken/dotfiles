@@ -94,7 +94,10 @@ return {
       },
     })
     vim.lsp.enable("helm_ls")
+
     vim.lsp.enable("yamlls")
+    vim.lsp.enable("terraformls")
+    vim.lsp.enable("tflint")
 
     -- Configure and enable LSP servers
     -- lua_ls
