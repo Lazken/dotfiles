@@ -1,11 +1,27 @@
 {
   "position": "top",
-  "modules-center": ["hyprland/window"],
-  "modules-left": ["clock", "hyprland/workspaces"],
-  "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery", "cpu", "memory", "temperature", "custom/power"],
+  "modules-left": ["clock#date", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "network", "pulseaudio", "battery", "backlight", "cpu", "memory", "temperature", "clock", "custom/power"],
   "clock": {
-    "format": "{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": " {:%H :%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "font": "16pt monospace",
+  },
+  "clock#date": {
+    "format": " {:%a %d} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "hyprland/workspaces": {
+    "format": " {id}: {icon} ",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "󰠮",
+      "5": "",
+      "default": ""
+    },
   },
   "battery": {
     "states": {
@@ -63,7 +79,7 @@
     "format-icons": ["", ""],
   }, 
   "custom/power": {
-    "format" : "⏻ ",
+    "format" : " ⏻ ",
       "tooltip": false,
       "menu": "on-click",
       "menu-file": "~/.config/waybar/power_menu.xml",
