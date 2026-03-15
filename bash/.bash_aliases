@@ -12,7 +12,7 @@ awp () {
   export AWS_PROFILE=$1
   export AWS_DEFAULT_PROFILE=$1
   echo "AWS profile is now '$1'"
-  aws sts get-caller-identity
+  aws sts get-caller-identity || aws sso login
 }
 
 awl () {
