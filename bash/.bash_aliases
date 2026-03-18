@@ -1,4 +1,5 @@
 alias nv='nvim'
+alias kssh='kitten ssh'
 alias letsgo="tmuxifier load-session brambo"
 alias letsathumi="tmuxifier load-session athumi"
 alias letsgodot="tmuxifier load-session personal"
