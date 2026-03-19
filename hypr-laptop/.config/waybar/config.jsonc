@@ -40,7 +40,8 @@
   },
   "network": {
     "interface": "wlan0",
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>{icon}  </span>{essid}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
