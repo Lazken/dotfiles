@@ -1,12 +1,12 @@
 {
   "position": "top",
-  "modules-left": ["clock#date", "hyprland/window"],
+  "modules-left": ["clock#date", "clock", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["tray", "network", "pulseaudio", "battery", "backlight", "cpu", "memory", "temperature", "clock", "custom/power"],
+  "modules-right": ["tray", "network", "pulseaudio", "battery", "backlight", "custom/power"],
   "clock": {
-    "format": " {:%H :%M} ",
+    "format": " {:%H:%M} ",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "font": "16pt monospace",
+    "font": "20pt monospace",
   },
   "clock#date": {
     "format": " {:%a %d} ",
@@ -87,6 +87,7 @@
         "shutdown": "shutdown now",
         "reboot": "reboot",
         "suspend": "systemctl suspend",
+        "lock": "hyprlock",
         "hibernate": "systemctl hibernate",
       },
   }

@@ -44,3 +44,8 @@ function fdf() {
     cd "$selected_dir" || return 1
   fi
 }
+
+function rwifi() {
+  nmcli networking off
+  nmcli networking on
+}

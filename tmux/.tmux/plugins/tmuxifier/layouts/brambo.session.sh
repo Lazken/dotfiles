@@ -31,10 +31,7 @@ if initialize_session "brambo"; then
   select_pane 1
 
   window_root "~/"
-  new_window "Home"
-
-  window_root "~/"
-  new_window "MUSIC"
+  new_window "Networking"
 
   select_window "RFM_DSO_TF_SOURCE"
 
