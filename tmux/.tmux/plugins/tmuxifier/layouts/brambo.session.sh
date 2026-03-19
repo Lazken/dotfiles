@@ -33,6 +33,10 @@ if initialize_session "brambo"; then
   window_root "~/"
   new_window "Networking"
 
+  window_root "~/"
+  new_window "Music"
+  run_cmd spotify_player
+
   select_window "RFM_DSO_TF_SOURCE"
 
 fi

@@ -6,6 +6,7 @@ alias letsgodot="tmuxifier load-session personal"
 #alias bat="batcat"
 alias inv='nvim $(fzf -m --preview="batcat --color=always {}")'
 alias vial='sudo Vial-v0.7.1-x86_64.AppImage'
+alias vtop="vtop --theme catppuccin-mocha-lavender"
 
 
 #functions
