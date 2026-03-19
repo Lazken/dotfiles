@@ -74,11 +74,11 @@
 
 #backlight {
   color: @yellow;
-  border-radius: 0px 1rem 1rem 0px;
 }
 
 #battery {
-    border-radius: 0;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
 }
 
 #pulseaudio {
