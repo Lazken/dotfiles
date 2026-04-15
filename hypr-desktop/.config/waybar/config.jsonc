@@ -1,15 +1,51 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/window"],
-  "modules-center": ["hyprland/workspaces" ],
-  "modules-right": ["tray", "clock", "pulseaudio", "network", "temperature", "cpu", "memory"],
+  "modules-left": ["clock#date", "clock", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery", "custom/power"],
   "clock": {
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "format": " {:%H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "font": "20pt monospace"
+  },
+  "clock#date": {
+    "format": " {:%a %d} ",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
+  "hyprland/workspaces": {
+    "format": " {id}: {icon} ",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "󰠮",
+      "5": "",
+      "default": ""
+    }
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "network": {
+    "interface": "wlan0",
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>{icon}  </span>{essid}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
   },
   "pulseaudio": {
       "format": "{icon}  {volume}%",
@@ -19,44 +55,42 @@
       },
       "on-click": "pavucontrol"
   },
-  "custom/pipewire": {
-    "format": "{icon}",
-    "return-type": "json",
-    "signal": 8,
-    "interval": "once",
-    "format-icons": {
-        "mute": "",
-        "default": ["", "", "", ""],
-    },
-    "exec": "pw-volume status"
-  },
-  "network": {
-	  "interface": "eno1",
-	  "format": "{ifname}",
-	  "format-wifi": "{essid} ({signalStrength}%) ",
-	  "format-ethernet": "{ifname} ",
-	  "format-disconnected": "", //An empty format will hide the module.
-	  "format-disconnected": "",
-	  "tooltip-format": "{ifname}",
-	  "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-	  "tooltip-format-ethernet": "{ifname} ",
-	  "tooltip-format-disconnected": "Disconnected",
-	  "max-length": 50
-  },
   "temperature": {
-    "thermal-zone": 2,
-    "critical-treshold": 70,
-    "format": "{temperatureC}°C",
-    "interval": 1,
+	  "thermal-zone": 2,
+	  "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+    "critical-threshold": 80,
+	"format": "{temperatureC}°C "
   },
   "cpu": {
-	  "interval": 10,
-	  "format": "{}% ",
-	  "max-length": 10
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10
   },
   "memory": {
 	  "interval": 30,
 	  "format": "{}% ",
 	  "max-length": 10
   },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""]
+  }, 
+  "custom/power": {
+    "format" : " ⏻ ",
+      "tooltip": false,
+      "menu": "on-click",
+      "menu-file": "~/.config/waybar/power_menu.xml",
+      "menu-actions": {
+        "shutdown": "shutdown now",
+        "reboot": "reboot",
+        "suspend": "systemctl suspend",
+        "lock": "hyprlock",
+        "hibernate": "systemctl hibernate",
+      }
+  }
 }
