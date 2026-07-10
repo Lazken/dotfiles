@@ -9,35 +9,34 @@ if initialize_session "brambo"; then
   window_root "~/repos/rheumafinder/rf_mono"
   new_window "RF_MONO"
   run_cmd "nvim"
-  split_v 10
+  split_h 10
   select_pane 1
 
-  window_root "~/repos/rheumafinder/rfm_dso_tf_source"
-  new_window "RFM_DSO_TF_SOURCE"
+  window_root "~/repos/rheumafinder/appliance"
+  new_window "appliance"
   run_cmd "nvim"
-  split_v 10
+  split_h 10
   select_pane 1
 
-  window_root "~/repos/rheumafinder/data-platform"
-  new_window "data-platform"
+  window_root "~/repos/rheumafinder/infra.deploy"
+  new_window "Infra Deploy"
   run_cmd "nvim"
-  split_v 10
+  split_h 10
+  select_pane 1
+
+  window_root "~/repos/rheumafinder/infra.modules"
+  new_window "Infra Modules"
+  run_cmd "nvim"
+  split_h 10
   select_pane 1
 
   window_root "~/dotfiles"
   new_window "Dotfiles"
   run_cmd "nvim"
-  split_v 10
+  split_h 10
   select_pane 1
 
-  window_root "~/"
-  new_window "Networking"
-
-  window_root "~/"
-  new_window "Music"
-  run_cmd spotify_player
-
-  select_window "RFM_DSO_TF_SOURCE"
+  select_window "Infra Deploy"
 
 fi
 

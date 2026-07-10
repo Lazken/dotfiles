@@ -3,6 +3,7 @@ personal dotfiles for usage with stow:
 https://www.gnu.org/software/stow/
 
 ## packages
+git
 tmux
 tmuxifier
 tmux-tpm
@@ -13,6 +14,7 @@ batcat
 stow
 k9s
 kitty
+ghostty-git
 starship
 hyprpaper
 hyprlock
@@ -20,6 +22,16 @@ swaync
 hypershot
 yazi
 npm
+spotify_player
+opencode
+libreoffice-fresh
+icaclient
+evremap
+
+### Apple specific
+sketchybar
+aerospace
+zsh
 
 All themed with catppuccin mocha.
 

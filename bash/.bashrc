@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 eval "$(starship init bash --print-full-init)"
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR=nvim
 export K9S_EDITOR=nvim
 # Set up fzf key bindings and fuzzy completion
