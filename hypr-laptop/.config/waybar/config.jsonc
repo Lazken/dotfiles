@@ -14,6 +14,9 @@
   },
   "hyprland/workspaces": {
     "format": " {id}: {icon} ",
+    "on-click": "activate",
+    "all-outputs": true,
+    "active-only": false,
     "format-icons": {
       "neovim": "",
       "Social": "",
