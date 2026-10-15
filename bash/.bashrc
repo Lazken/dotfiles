@@ -13,5 +13,7 @@ export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export EDITOR=nvim
 export K9S_EDITOR=nvim
-# Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+
+# uv
+export PATH="/home/brambo/.local/share/../bin:$PATH"

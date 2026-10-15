@@ -36,6 +36,12 @@ if initialize_session "brambo"; then
   split_h 10
   select_pane 1
 
+  window_root "~/repos/personal/pebble-catppuccin"
+  new_window "Pebble"
+  run_cmd "nvim"
+  split_h 10
+  select_pane 1
+
   select_window "Infra Deploy"
 
 fi

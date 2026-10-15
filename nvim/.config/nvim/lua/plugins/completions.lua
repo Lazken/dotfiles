@@ -7,18 +7,17 @@ return {
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip").filetype_extend("terraform", { "terraform" })
-        require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./lua/plugins/extras/luasnip" } })
-      end,
     },
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip").filetype_extend("terraform", { "terraform" })
+      require("luasnip").filetype_extend("helm", {  "kubernetes", "yaml" })
+    end,
     opts = {
       history = true,
       updateevents = "TextChanged,TextChangedI",
       delete_check_events = "TextChanged",
     },
-    -- stylua: ignore
     keys = {
       {
         "<tab>",
